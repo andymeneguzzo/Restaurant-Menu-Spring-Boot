@@ -10,8 +10,6 @@ public class ErrorResponse {
     private String message;
     private String path;
 
-    // Constructor, getters, and setters
-
     public ErrorResponse(LocalDateTime timestamp, int status, String error,
                          String message, String path) {
         this.timestamp = timestamp;
