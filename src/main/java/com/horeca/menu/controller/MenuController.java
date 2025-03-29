@@ -8,6 +8,7 @@ package com.horeca.menu.controller;
 // Add @RestController annotation to make it a REST controller
 // Add @RequestMapping("/api/menu") to set the base path for all endpoints
 
+import com.horeca.menu.exception.MenuItemNotFound;
 import com.horeca.menu.model.MenuItem;
 import com.horeca.menu.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +42,7 @@ public class MenuController {
         // Exception handling
         try {
             return ResponseEntity.ok(menuService.getItemById(id));
-        } catch (Exception ex) {
+        } catch (MenuItemNotFound ex) {
             return ResponseEntity.notFound().build();
         }
     }
